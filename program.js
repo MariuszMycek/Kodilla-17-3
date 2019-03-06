@@ -8,9 +8,9 @@ process.stdin.on("readable", function() {
         process.stdout.write("Quiting application!\n");
         process.exit();
         break;
-      case "/env":
-        console.log("Language: " + process.env.LANG);
-        console.log("Node version: " + process.versions.node);
+      case "/info":
+      process.stdout.write("Language: " + process.env.LANG + "\n");
+      process.stdout.write("Node version: " + process.versions.node + "\n");
         break;
       default:
         process.stderr.write("Wrong instruction!\n");
