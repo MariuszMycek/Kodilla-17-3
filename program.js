@@ -9,11 +9,12 @@ process.stdin.on("readable", function() {
         process.exit();
         break;
       case "/info":
-      process.stdout.write("Language: " + process.env.LANG + "\n");
-      process.stdout.write("Node version: " + process.versions.node + "\n");
+        process.stdout.write("Language: " + process.env.LANG + "\n");
+        process.stdout.write("Node version: " + process.versions.node + "\n");
         break;
       default:
         process.stderr.write("Wrong instruction!\n");
     }
+    process.stdin.resume();
   }
 });
